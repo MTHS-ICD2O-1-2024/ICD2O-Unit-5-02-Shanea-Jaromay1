@@ -5,24 +5,24 @@
 // This file contains the JS functions for index.html
 
 const randomNumber = Math.floor(Math.random() * 6) + 1
-
 /**
- * This function checks if the user has selected the random number from above
- */
+* This function generates random positive or negative number
+*/
 // eslint-disable-next-line no-unused-vars
-function generateNumber () {
-  // input
-  const positiveNumber = document.getElementById('option-positive').checked
-  // process
-  if (positiveNumber == true) {
-    // output
-    document.getElementById('answer').innerHTML =
-    'You have guessed the correct number! HURRAY!'
-  }
-  if (userNumber !== randomNumber) {
-    // output
-    document.getElementById('result').innerHTML =
-    'You have guessed the wrong number! BOO!' +
-    'The correct number was:' + randomNumber + '.'
+
+function generateNumber() {
+
+   // input
+  const optionPositive = document.getElementById('option-positive').checked
+
+   // generate a new random number every time
+   const randomNumber = Math.floor(Math.random() * 6) + 1
+
+   // output
+  if (optionPositive === true) {
+      document.getElementById('answer').innerHTML = 'Your random number is: ' + randomNumber
+  } else {
+      const randomNegativeNumber = randomNumber * -1
+      document.getElementById('answer').innerHTML = 'Your random number is: ' + randomNegativeNumber
   }
 }
