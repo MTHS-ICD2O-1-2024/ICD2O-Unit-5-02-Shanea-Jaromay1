@@ -6,23 +6,24 @@
 
 const randomNumber = Math.floor(Math.random() * 6) + 1
 /**
-* This function generates random positive or negative number
-*/
+ * This function generates random positive or negative number
+ */
 // eslint-disable-next-line no-unused-vars
 
 function generateNumber() {
+  // input
+  const optionPositive = document.getElementById("option-positive").checked
 
-   // input
-  const optionPositive = document.getElementById('option-positive').checked
+  // generate a new random number every time
+  const randomNumber = Math.floor(Math.random() * 6) + 1
 
-   // generate a new random number every time
-   const randomNumber = Math.floor(Math.random() * 6) + 1
-
-   // output
+  // output
   if (optionPositive === true) {
-      document.getElementById('answer').innerHTML = 'Your random number is: ' + randomNumber
+    document.getElementById("answer").innerHTML =
+      "Your random number is: " + randomNumber
   } else {
-      const randomNegativeNumber = randomNumber * -1
-      document.getElementById('answer').innerHTML = 'Your random number is: ' + randomNegativeNumber
+    const randomNegativeNumber = randomNumber * -1
+    document.getElementById("answer").innerHTML =
+      "Your random number is: " + randomNegativeNumber
   }
 }
